@@ -1,0 +1,73 @@
+---
+import { GraduationCap, Award, BookOpen, Heart, Shield } from 'lucide-react'
+import LogoVertical from '../icons/LogoVertical.astro'
+
+const credentials = [
+  { icon: Award, text: 'CRP 01/28820' },
+  { icon: GraduationCap, text: 'Universidade de Brasilia (UnB)' },
+  { icon: Heart, text: 'Instituto Feminamente', href: 'https://feminamente.com.br/' },
+]
+---
+
+<section class="relative bg-background py-24 md:py-32" id="sobre">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="flex flex-col items-center gap-14 md:flex-row md:gap-20">
+      <div class="relative shrink-0">
+        <div class="h-80 w-64 rounded-3xl bg-secondary/30 p-4 shadow-xl md:h-96 md:w-72">
+          <LogoVertical class="h-full w-full text-brand" />
+        </div>
+      </div>
+
+      <div class="flex-1">
+        <p class="mb-3 font-sans text-sm font-medium uppercase tracking-widest text-primary">
+          Quem vai te ouvir
+        </p>
+        <h2 class="font-serif text-3xl font-medium text-foreground md:text-4xl text-balance">
+          Sou Rhayane Miranda
+        </h2>
+        <p class="mt-2 font-sans text-base text-muted-foreground">
+          Psicóloga Clínica · CRP 01/28820
+        </p>
+        <div class="mt-6 space-y-4 font-sans text-base leading-relaxed text-foreground/85">
+          <p>
+            Sou formada em Psicologia pela Universidade de Brasilia (UnB) e construí minha pratica com um olhar atento as vivencias das mulheres - as pressões que muitas vezes nao tem nome, aos silêncios que pesam, as historias que merecem ser contadas em um lugar seguro.
+          </p>
+          <p>
+            Minha escuta é sensível às questões de gênero, raça e sexualidade. Trabalho com foco nas vivências das mulheres, acolhendo o que voce traz com respeito e sem julgamento.
+          </p>
+          <p class="font-medium text-foreground">
+            Aqui, você não precisa se encaixar em nenhum molde. O espaço e seu.
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-3">
+          <p class="font-sans text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            Formação e experiência
+          </p>
+          <div class="flex flex-wrap gap-3">
+            {credentials.map((cred) => {
+              const Icon = cred.icon
+              return (
+                <div class="flex items-center gap-2 rounded-full bg-secondary/60 px-4 py-2">
+                  <Icon className="h-4 w-4 text-primary" />
+                  {cred.href ? (
+                    <a
+                      href={cred.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="font-sans text-xs font-medium text-foreground/80 underline underline-offset-4 hover:no-underline"
+                    >
+                      {cred.text}
+                    </a>
+                  ) : (
+                    <span class="font-sans text-xs font-medium text-foreground/80">{cred.text}</span>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+import { Check } from "lucide-react";
+
+const items = [
+  "Sente o peso de expectativas que nunca pareceram realmente suas",
+  "Tem histórias que nunca foram ouvidas de verdade",
+  "Quer entender melhor quem você é - sem pressa e sem julgamento",
+  "Busca um espaço sobre onde gênero, corpo, relacionamentos e identidade possam ser falados abertamente",
+  "Precisa de alguém que te ouça de verdade",
+];
+---
+
+<section class="relative bg-secondary/40 py-24 md:py-32" id="para-quem">
+  <div class="mx-auto max-w-6xl px-6">
+    <p
+      class="mb-3 text-center font-sans text-sm font-medium uppercase tracking-widest text-primary"
+    >
+      Para quem é
+    </p>
+    <h2
+      class="text-center font-serif text-3xl font-medium text-foreground md:text-4xl lg:text-5xl text-balance"
+    >
+      Você veio ao lugar certo se...
+    </h2>
+    <div class="mt-14 grid gap-5 md:grid-cols-2">
+      {
+        items.map((item) => (
+          <div class="flex items-start gap-4 rounded-2xl bg-card/80 p-6 backdrop-blur-sm transition-shadow hover:shadow-md">
+            <div class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/15">
+              <Check className="h-4 w-4 text-primary" />
+            </div>
+            <p class="font-sans text-base leading-relaxed text-foreground/85">
+              {item}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

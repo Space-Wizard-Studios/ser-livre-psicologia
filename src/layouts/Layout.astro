@@ -1,0 +1,49 @@
+---
+import "@fontsource-variable/nunito/index.css";
+import "@fontsource-variable/nunito/wght-italic.css";
+import "@fontsource-variable/dm-sans/index.css";
+import logoUrl from "../assets/images/logo.svg?url";
+import "../styles/globals.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Ser Livre Psicologia | Rhayane Miranda - Psicoterapia Online",
+  description = "Psicoterapia online com escuta sensível, acolhedora e atenta às vivências das mulheres. Rhayane Miranda, Psicóloga Clínica CRP 01/28820.",
+} = Astro.props;
+---
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F5F0EB" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Favicons -->
+    <link rel="icon" href={logoUrl} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={logoUrl} />
+  </head>
+  <body class="antialiased">
+    <a
+      href="#content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:rounded-full focus:bg-primary focus:px-5 focus:py-2 focus:text-sm focus:font-medium focus:text-primary-foreground"
+    >
+      Ir para o conteúdo
+    </a>
+    <slot />
+    <script>
+      import { inject } from "@vercel/analytics";
+      inject();
+    </script>
+  </body>
+</html>

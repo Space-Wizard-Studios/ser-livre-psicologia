@@ -3,7 +3,6 @@ import "@fontsource-variable/nunito/index.css";
 import "@fontsource-variable/nunito/wght-italic.css";
 import "@fontsource-variable/dm-sans/index.css";
 import { getImage } from "astro:assets";
-import logoUrl from "../assets/images/logo.svg?url";
 import ogPortrait from "../assets/images/rhayane-portrait.jpg";
 import "../styles/globals.css";
 
@@ -80,8 +79,8 @@ const jsonLd = {
     <meta name="twitter:image" content={ogImageURL} />
 
     <!-- Favicons -->
-    <link rel="icon" href={logoUrl} type="image/svg+xml" />
-    <link rel="apple-touch-icon" href={logoUrl} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
 
     <!-- JSON-LD Structured Data -->
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

@@ -14,6 +14,37 @@ const {
   title = "Ser Livre Psicologia | Rhayane Miranda - Psicoterapia Online",
   description = "Psicoterapia online com escuta sensível, acolhedora e atenta às vivências das mulheres. Rhayane Miranda, Psicóloga Clínica CRP 01/28820.",
 } = Astro.props;
+
+const siteUrl = Astro.site ?? new URL("https://serlivrepsi.com");
+const canonicalURL = new URL(Astro.url.pathname, siteUrl).href;
+const ogImageURL = new URL("/og.jpg", siteUrl).href;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Ser Livre Psicologia",
+  url: siteUrl.href,
+  description:
+    "Psicoterapia online com escuta sensível, acolhedora e atenta às vivências das mulheres.",
+  telephone: "+556199335952",
+  email: "rhayanecastro.m@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "BR",
+    addressRegion: "DF",
+    addressLocality: "Brasília",
+  },
+  founder: {
+    "@type": "Person",
+    name: "Rhayane Miranda",
+    jobTitle: "Psicóloga Clínica",
+    description: "CRP 01/28820",
+    sameAs: "https://instagram.com/psi.rhay",
+  },
+  serviceType: "Psicoterapia online",
+  areaServed: { "@type": "Country", name: "Brasil" },
+  sameAs: ["https://instagram.com/psi.rhay"],
+};
 ---
 
 <html lang="pt-BR">
@@ -23,15 +54,32 @@ const {
     <meta name="theme-color" content="#F5F0EB" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ser Livre Psicologia" />
+    <meta property="og:locale" content="pt_BR" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ser Livre Psicologia — Rhayane Miranda, Psicóloga Clínica" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
 
     <!-- Favicons -->
     <link rel="icon" href={logoUrl} type="image/svg+xml" />
     <link rel="apple-touch-icon" href={logoUrl} />
+
+    <!-- JSON-LD Structured Data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body class="antialiased">
     <a

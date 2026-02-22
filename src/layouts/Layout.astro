@@ -2,7 +2,9 @@
 import "@fontsource-variable/nunito/index.css";
 import "@fontsource-variable/nunito/wght-italic.css";
 import "@fontsource-variable/dm-sans/index.css";
+import { getImage } from "astro:assets";
 import logoUrl from "../assets/images/logo.svg?url";
+import ogPortrait from "../assets/images/rhayane-portrait.jpg";
 import "../styles/globals.css";
 
 interface Props {
@@ -17,7 +19,9 @@ const {
 
 const siteUrl = Astro.site ?? new URL("https://serlivrepsi.com");
 const canonicalURL = new URL(Astro.url.pathname, siteUrl).href;
-const ogImageURL = new URL("/og.jpg", siteUrl).href;
+
+const ogImage = await getImage({ src: ogPortrait, width: 1200, format: "jpg" });
+const ogImageURL = new URL(ogImage.src, siteUrl).href;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -64,9 +68,10 @@ const jsonLd = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={ogImageURL} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Ser Livre Psicologia — Rhayane Miranda, Psicóloga Clínica" />
+    <meta property="og:image:width" content={String(ogImage.attributes.width ?? 1200)} />
+    <meta property="og:image:height" content={String(ogImage.attributes.height ?? 630)} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="Rhayane Miranda — Psicóloga Clínica, Ser Livre Psicologia" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />

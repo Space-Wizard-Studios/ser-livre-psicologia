@@ -9,7 +9,7 @@
   --font-dm-sans: "DM Sans Variable";
 
   /* Ser Livre Psicologia palette */
-  /* Rosa antigo #C17A7A · Bege #E8D5C0 · Off-white #F5F0EB · Azul marinho #1A2744 */
+  /* Rosa antigo #a35454 · Bege #E8D5C0 · Off-white #F5F0EB · Azul marinho #1A2744 */
   --background: #f5f0eb;
   --foreground: #1a2744;
   --card: #ffffff;
@@ -17,7 +17,7 @@
   --popover: #ffffff;
   --popover-foreground: #1a2744;
   --brand: #805e94;
-  --primary: #c17a7a;
+  --primary: #a35454;
   --primary-foreground: #ffffff;
   --secondary: #e8d5c0;
   --secondary-foreground: #1a2744;
@@ -29,8 +29,8 @@
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: #d9cfc5;
   --input: #d9cfc5;
-  --ring: #c17a7a;
-  --chart-1: #c17a7a;
+  --ring: #a35454;
+  --chart-1: #a35454;
   --chart-2: #e8d5c0;
   --chart-3: #1a2744;
   --chart-4: #f5f0eb;
@@ -38,12 +38,12 @@
   --radius: 0.625rem;
   --sidebar: #f5f0eb;
   --sidebar-foreground: #1a2744;
-  --sidebar-primary: #c17a7a;
+  --sidebar-primary: #a35454;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #e8d5c0;
   --sidebar-accent-foreground: #1a2744;
   --sidebar-border: #d9cfc5;
-  --sidebar-ring: #c17a7a;
+  --sidebar-ring: #a35454;
 }
 
 [data-theme="dark"] {
@@ -53,7 +53,7 @@
   --card-foreground: #f5f0eb;
   --popover: #243358;
   --popover-foreground: #f5f0eb;
-  --primary: #c17a7a;
+  --primary: #a35454;
   --primary-foreground: #ffffff;
   --secondary: #2e3d5a;
   --secondary-foreground: #f5f0eb;
@@ -65,20 +65,20 @@
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: #2e3d5a;
   --input: #2e3d5a;
-  --ring: #c17a7a;
-  --chart-1: #c17a7a;
+  --ring: #a35454;
+  --chart-1: #a35454;
   --chart-2: #e8d5c0;
   --chart-3: #f5f0eb;
   --chart-4: #5a6478;
   --chart-5: #d9cfc5;
   --sidebar: #1a2744;
   --sidebar-foreground: #f5f0eb;
-  --sidebar-primary: #c17a7a;
+  --sidebar-primary: #a35454;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #2e3d5a;
   --sidebar-accent-foreground: #f5f0eb;
   --sidebar-border: #2e3d5a;
-  --sidebar-ring: #c17a7a;
+  --sidebar-ring: #a35454;
 }
 
 @theme inline {
